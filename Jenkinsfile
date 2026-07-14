@@ -2,10 +2,16 @@ pipeline {
     agent any
     
     tools {
-        maven 'maven3.6'
-        jdk 'jdk17'
+        maven 'Maven'
+        jdk 'JDK17'
     }
 
+    stages {
+        stage('Git Checkout') {
+            steps {
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/priyaramaiah35/Boardgame.git'
+            }
+        }
     stages {
         
         stage('Compile') {
@@ -29,4 +35,5 @@ pipeline {
             }
         }
     }
+}
 }
