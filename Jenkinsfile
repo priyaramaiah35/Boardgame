@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/priyaramaiah35/Boardgame.git'
+                git branch: 'main', changelog: true, poll: true, url: 'https://github.com/priyaramaiah35/Boardgame.git'
             }
         }
         stage('Compile') {
